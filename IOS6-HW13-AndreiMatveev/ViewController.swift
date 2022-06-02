@@ -27,7 +27,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        title = "Настройки"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        self.title = "Настройки"
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
