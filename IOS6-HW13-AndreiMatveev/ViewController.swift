@@ -7,13 +7,50 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+struct SettingsOptions {
+    let title: String
+    let icon: UIImage?
+    let iconBackgroundColor: UIColor
+    let handler: (() -> Void)
+}
 
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    private let tableView: UITableView = {
+        let table = UITableView(frame: .zero, style: .grouped)
+        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        return table
+    }()
+    
+    var models = [SettingsOptions]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        configure()
+        title = "Настройки"
+        view.addSubview(tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.frame = view.bounds
+    }
+    
+    func configure() {
+        self.models = Array(0...100).compactMap({
+            SettingsOptions(title: "Строка \($0)", icon: UIImage(systemName: "apple"), iconBackgroundColor: .systemPink) {
+                
+            }
+        })
     }
 
-
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return models.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let model = models[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = model.title
+        return cell
+    }
 }
 
