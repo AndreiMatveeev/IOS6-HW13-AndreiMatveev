@@ -85,14 +85,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             .staticCell(model: SettingsOptions(title: "Уведомления", icon: UIImage(systemName: "bell.badge.fill"), iconBackgroundColor: .systemRed) {
                 print("Нажата ячейка Уведомления")
              }),
-
-            .staticCell(model: SettingsOptions(title: "Экранное время", icon: UIImage(systemName: "hourglass"), iconBackgroundColor: .systemPurple) {
-                print("Нажата ячейка Экранное время")
-             }),
             .staticCell(model: SettingsOptions(title: "Звуки, тактильные сигналы", icon: UIImage(systemName: "speaker.wave.3.fill"), iconBackgroundColor: .systemPink) {
                 print("Нажата ячейка Звуки, тактильные сигналы")
-
+             }),
+            .staticCell(model: SettingsOptions(title: "Фокусирование", icon: UIImage(systemName: "moon.fill"), iconBackgroundColor: .systemPurple) {
+                            print("Нажата ячейка Фокусирование")
+            }),
+                .staticCell(model: SettingsOptions(title: "Экранное время", icon: UIImage(systemName: "hourglass"), iconBackgroundColor: .systemPurple) {
+                print("Нажата ячейка Экранное время")
              })
+            
         ]))
     }
     
