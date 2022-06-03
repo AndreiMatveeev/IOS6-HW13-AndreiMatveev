@@ -48,7 +48,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }()
     
     var userInfoHeader: UserInfoHeader!
-    
     var models = [Sections]()
     
     override func viewDidLoad() {
@@ -150,8 +149,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.configure(with: model)
             return cell
         }
-        
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
