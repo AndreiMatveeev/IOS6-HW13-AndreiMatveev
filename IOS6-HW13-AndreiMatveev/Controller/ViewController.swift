@@ -71,13 +71,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             .staticCell(model: SettingsOptions(title: "Wi-Fi", icon: UIImage(systemName: "wifi"), iconBackgroundColor: .systemBlue) {
                 print("Нажата ячейка Wi-Fi")
             }),
-
+            .staticCell(model: SettingsOptions(title: "Bluetooth", icon: UIImage(named: "bluetooth"), iconBackgroundColor: .systemBlue) {
+                print("Нажата ячейка Bluetooth")
+            }),
             .staticCell(model: SettingsOptions(title: "Мобильные данные", icon: UIImage(systemName: "antenna.radiowaves.left.and.right"), iconBackgroundColor: .systemGreen) {
                 print("Нажата ячейка Мобильные данные")
              }),
-            .staticCell(model: SettingsOptions(title: "Bluetooth", icon: UIImage(named: "bluetooth"), iconBackgroundColor: .systemBlue) {
-                print("Нажата ячейка Bluetooth")
-            })
+            .staticCell(model: SettingsOptions(title: "Режим модема", icon: UIImage(systemName: "personalhotspot"), iconBackgroundColor: .systemGreen) {
+                print("Нажата ячейка Режим модема")
+             })
         ]))
     }
     
