@@ -7,6 +7,10 @@
 
 import UIKit
 
+struct Sections {
+    let options: [SettingsOptions]
+}
+
 struct SettingsOptions {
     let title: String
     let icon: UIImage?
@@ -19,10 +23,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     private let tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.identifier)
+        
+        var userInfoHeader: UserInfoHeader!
+        let frame = CGRect(x: 0, y: 88, width: 40, height: 100)
+        userInfoHeader = UserInfoHeader(frame: frame)
+        table.tableHeaderView = userInfoHeader
+        table.tableFooterView = UIView()
+        
         return table
     }()
     
-    var models = [SettingsOptions]()
+    var userInfoHeader: UserInfoHeader!
+    
+    var models = [Sections]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,22 +46,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         tableView.frame = view.bounds
+        
     }
     
     func configure() {
-        self.models = Array(0...100).compactMap({
-            SettingsOptions(title: "Строка \($0)", icon: UIImage(systemName: "homekit"), iconBackgroundColor: .systemBlue) {
-                
-            }
-        })
+        models.append(Sections(options: [
+            SettingsOptions(title: "Авиарежим", icon: UIImage(systemName: "airplane"), iconBackgroundColor: .yellow, handler: {
+            })
+        ]))
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return models.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return models.count
+        return models[section].options.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = models[indexPath.row]
+        let model = models[indexPath.section].options[indexPath.row]
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.identifier, for: indexPath) as? SettingTableViewCell else {
             return UITableViewCell()
         }
