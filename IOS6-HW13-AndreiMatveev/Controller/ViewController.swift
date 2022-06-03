@@ -84,6 +84,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         models.append(Sections(options: [
             .staticCell(model: SettingsOptions(title: "Уведомления", icon: UIImage(systemName: "bell.badge.fill"), iconBackgroundColor: .systemRed) {
                 print("Нажата ячейка Уведомления")
+             }),
+            .staticCell(model: SettingsOptions(title: "Фокусирование", icon: UIImage(systemName: "moon.fill"), iconBackgroundColor: .systemPurple) {
+                print("Нажата ячейка Фокусирование")
              })
         ]))
     }
