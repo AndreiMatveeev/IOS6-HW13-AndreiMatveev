@@ -68,6 +68,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             .switchCell(model: SettingsSwitchOptions(title: "Авиарежим", icon: UIImage(systemName: "airplane"), iconBackgroundColor: .yellow, handler: {
                 print("Нажата ячейка Авиарежим")
             }, isOn: true)),
+            .staticCell(model: SettingsOptions(title: "Wi-Fi", icon: UIImage(systemName: "wifi"), iconBackgroundColor: .systemBlue) {
+                print("Нажата ячейка Wi-Fi")
+            })
         ]))
     }
     
