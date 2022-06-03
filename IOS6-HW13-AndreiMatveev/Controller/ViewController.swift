@@ -84,6 +84,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         models.append(Sections(options: [
             .staticCell(model: SettingsOptions(title: "Уведомления", icon: UIImage(systemName: "bell.badge.fill"), iconBackgroundColor: .systemRed) {
                 print("Нажата ячейка Уведомления")
+             }),
+            .staticCell(model: SettingsOptions(title: "Звуки, тактильные сигналы", icon: UIImage(systemName: "speaker.wave.3.fill"), iconBackgroundColor: .systemPink) {
+                print("Нажата ячейка Звуки, тактильные сигналы")
              })
         ]))
     }
