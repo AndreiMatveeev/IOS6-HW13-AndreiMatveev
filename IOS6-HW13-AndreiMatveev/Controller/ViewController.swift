@@ -74,13 +74,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             .staticCell(model: SettingsOptions(title: "Bluetooth", icon: UIImage(named: "bluetooth"), iconBackgroundColor: .systemBlue) {
                 print("Нажата ячейка Bluetooth")
             }),
-            .staticCell(model: SettingsOptions(title: "Мобильные данные", icon: UIImage(systemName: "antenna.radiowaves.left.and.right"), iconBackgroundColor: .systemGreen) {
+            .switchCell(model: SettingsSwitchOptions(title: "Мобильные данные", icon: UIImage(systemName: "antenna.radiowaves.left.and.right"), iconBackgroundColor: .systemGreen, handler: {
                 print("Нажата ячейка Мобильные данные")
-             }),
+            }, isOn: false)),
             .staticCell(model: SettingsOptions(title: "Режим модема", icon: UIImage(systemName: "personalhotspot"), iconBackgroundColor: .systemGreen) {
                 print("Нажата ячейка Режим модема")
              })
         ]))
+        
         models.append(Sections(options: [
             .staticCell(model: SettingsOptions(title: "Уведомления", icon: UIImage(systemName: "bell.badge.fill"), iconBackgroundColor: .systemRed) {
                 print("Нажата ячейка Уведомления")
@@ -94,7 +95,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 .staticCell(model: SettingsOptions(title: "Экранное время", icon: UIImage(systemName: "hourglass"), iconBackgroundColor: .systemPurple) {
                 print("Нажата ячейка Экранное время")
              })
-            
+        ]))
+        
+        models.append(Sections(options: [
+            .staticCell(model: SettingsOptions(title: "Основные", icon: UIImage(systemName: "gear"), iconBackgroundColor: .systemGray) {
+                print("Нажата ячейка Основные")
+             }),
+            .staticCell(model: SettingsOptions(title: "Пункт управления", icon: UIImage(systemName: "slider.horizontal.3"), iconBackgroundColor: .systemGray) {
+                print("Нажата ячейка Пункт управления")
+             }),
+            .staticCell(model: SettingsOptions(title: "Экран и яркость", icon: UIImage(systemName: "textformat.size"), iconBackgroundColor: .systemBlue) {
+                            print("Нажата ячейка Экран и яркость")
+            }),
+                .staticCell(model: SettingsOptions(title: "Экран домой", icon: UIImage(systemName: "iphone.homebutton"), iconBackgroundColor: .systemPurple) {
+                print("Нажата ячейка Экран домой")
+             }),
+            .staticCell(model: SettingsOptions(title: "Универсальный доступ", icon: UIImage(systemName: "person.circle"), iconBackgroundColor: .systemBlue) {
+                print("Нажата ячейка Универсальный доступ")
+             }),
+            .staticCell(model: SettingsOptions(title: "Обои", icon: UIImage(systemName: "command.circle"), iconBackgroundColor: .systemCyan) {
+                print("Нажата ячейка Обои")
+             }),
+            .staticCell(model: SettingsOptions(title: "Аккумулятор", icon: UIImage(systemName: "battery.100"), iconBackgroundColor: .systemGreen) {
+                            print("Нажата ячейка Аккумулятор")
+            }),
+                .staticCell(model: SettingsOptions(title: "Конфеденциальность", icon: UIImage(systemName: "hand.raised"), iconBackgroundColor: .systemBlue) {
+                print("Нажата ячейка Конфеденциальность")
+             })
         ]))
     }
     
