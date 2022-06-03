@@ -81,6 +81,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 print("Нажата ячейка Режим модема")
              })
         ]))
+        models.append(Sections(options: [
+            .staticCell(model: SettingsOptions(title: "Уведомления", icon: UIImage(systemName: "bell.badge.fill"), iconBackgroundColor: .systemRed) {
+                print("Нажата ячейка Уведомления")
+             })
+        ]))
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
