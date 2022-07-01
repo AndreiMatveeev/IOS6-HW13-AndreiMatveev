@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B275B71C286F584500F78555 /* settingCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B275B71B286F584500F78555 /* settingCellModel.swift */; };
 		B2B4241E284A1CE5007C13ED /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B4241D284A1CE5007C13ED /* UserInfoTableViewCell.swift */; };
 		B2B42420284A62E3007C13ED /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B4241F284A62E3007C13ED /* SwitchTableViewCell.swift */; };
 		B2DC8BA72847693E003B5686 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DC8BA62847693E003B5686 /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B275B71B286F584500F78555 /* settingCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingCellModel.swift; sourceTree = "<group>"; };
 		B2B4241D284A1CE5007C13ED /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
 		B2B4241F284A62E3007C13ED /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		B2DC8BA32847693E003B5686 /* IOS6-HW13-AndreiMatveev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS6-HW13-AndreiMatveev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +87,7 @@
 		B275B71A286F4A7700F78555 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B275B71B286F584500F78555 /* settingCellModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			files = (
 				B2B4241E284A1CE5007C13ED /* UserInfoTableViewCell.swift in Sources */,
 				B2DC8BAB2847693E003B5686 /* ViewController.swift in Sources */,
+				B275B71C286F584500F78555 /* settingCellModel.swift in Sources */,
 				B2DC8BA72847693E003B5686 /* AppDelegate.swift in Sources */,
 				B2DC8BBB28489471003B5686 /* SettingTableViewCell.swift in Sources */,
 				B2DC8BA92847693E003B5686 /* SceneDelegate.swift in Sources */,
