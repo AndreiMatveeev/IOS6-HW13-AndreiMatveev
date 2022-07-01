@@ -31,7 +31,7 @@ struct SettingsOptions {
     let handler: (() -> Void)
 }
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate {
 
     private let tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
@@ -122,6 +122,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
              })
         ]))
     }
+}
+    
+// MARK: - UITableViewDataSource
+
+    extension ViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return models.count
@@ -149,6 +154,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return cell
         }
     }
+    }
+
+// MARK: - UITableViewDelegate
+
+extension ViewController{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -161,4 +171,5 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
 }
+
 
