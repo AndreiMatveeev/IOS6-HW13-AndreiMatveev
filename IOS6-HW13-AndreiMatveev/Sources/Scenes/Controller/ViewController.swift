@@ -47,7 +47,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return table
     }()
     
-    var userInfoHeader: UserInfoHeader!
     var models = [Sections]()
     
     override func viewDidLoad() {
