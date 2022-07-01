@@ -10,12 +10,12 @@ import UIKit
 class UserInfoHeader: UIView {
     
     let profileImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
-        iv.clipsToBounds = true
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.image = UIImage(named: "IMG_5544")
-        return iv
+        let myImageView = UIImageView()
+        myImageView.contentMode = .scaleAspectFill
+        myImageView.clipsToBounds = true
+        myImageView.translatesAutoresizingMaskIntoConstraints = false
+        myImageView.image = UIImage(named: "IMG_5544")
+        return myImageView
     }()
     
     let usernameLabel: UILabel = {
