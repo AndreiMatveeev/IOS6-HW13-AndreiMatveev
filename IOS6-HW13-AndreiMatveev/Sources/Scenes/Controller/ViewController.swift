@@ -23,6 +23,8 @@ class ViewController: UIViewController, UITableViewDelegate {
         return table
     }()
     
+    private lazy var models: [Sections] = SettingCellModel().configure()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true

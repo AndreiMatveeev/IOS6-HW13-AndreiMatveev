@@ -31,12 +31,12 @@ struct SettingsOptions {
     let handler: (() -> Void)
 }
 
-var models = [Sections]()
+//var models = [Sections]()
 
 class SettingCellModel {
     
-    func configure() {
-        models.append(Sections(options: [
+    func configure() -> [Sections] {
+        return [Sections(options: [
             .switchCell(model: SettingsSwitchOptions(title: "Авиарежим", icon: UIImage(systemName: "airplane"), iconBackgroundColor: .yellow, handler: {
                 print("Нажата ячейка Авиарежим")
             }, isOn: true)),
@@ -52,9 +52,9 @@ class SettingCellModel {
             .staticCell(model: SettingsOptions(title: "Режим модема", icon: UIImage(systemName: "personalhotspot"), iconBackgroundColor: .systemGreen) {
                 print("Нажата ячейка Режим модема")
              })
-        ]))
+        ]),
         
-        models.append(Sections(options: [
+        Sections(options: [
             .staticCell(model: SettingsOptions(title: "Уведомления", icon: UIImage(systemName: "bell.badge.fill"), iconBackgroundColor: .systemRed) {
                 print("Нажата ячейка Уведомления")
              }),
@@ -67,9 +67,9 @@ class SettingCellModel {
                 .staticCell(model: SettingsOptions(title: "Экранное время", icon: UIImage(systemName: "hourglass"), iconBackgroundColor: .systemPurple) {
                 print("Нажата ячейка Экранное время")
              })
-        ]))
+        ]),
         
-        models.append(Sections(options: [
+        Sections(options: [
             .staticCell(model: SettingsOptions(title: "Основные", icon: UIImage(systemName: "gear"), iconBackgroundColor: .systemGray) {
                 print("Нажата ячейка Основные")
              }),
@@ -94,7 +94,7 @@ class SettingCellModel {
                 .staticCell(model: SettingsOptions(title: "Конфеденциальность", icon: UIImage(systemName: "hand.raised"), iconBackgroundColor: .systemBlue) {
                 print("Нажата ячейка Конфеденциальность")
              })
-        ]))
+        ])]
     }
     
 }
