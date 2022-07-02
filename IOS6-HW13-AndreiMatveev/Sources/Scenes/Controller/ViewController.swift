@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate {
-   
+    
     // MARK: - Properties
     
     private var settingsView: SettingView? {
@@ -30,15 +30,15 @@ class ViewController: UIViewController, UITableViewDelegate {
         settingsView?.tableView.frame = view.bounds
     }
 }
-    
+
 // MARK: - UITableViewDataSource
 
-    extension ViewController: UITableViewDataSource {
+extension ViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return models.count
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return models[section].options.count
     }
@@ -61,7 +61,7 @@ class ViewController: UIViewController, UITableViewDelegate {
             return cell
         }
     }
-    }
+}
 
 // MARK: - UITableViewDelegate
 

@@ -32,24 +32,26 @@ class SettingView: UIView {
         super.init(frame: .zero)
         commonInit()
     }
-
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         commonInit()
     }
-
+    
     private func commonInit() {
         backgroundColor = .systemBackground
         setupTableView()
     }
-
-func setupTableView() {
-    addSubview(tableView)
-    NSLayoutConstraint.activate([
-        tableView.topAnchor.constraint(equalTo: topAnchor),
-        tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
-        tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
-        tableView.rightAnchor.constraint(equalTo: rightAnchor),
-    ])
-}
+    
+    // MARK: - Settings
+    
+    func setupTableView() {
+        addSubview(tableView)
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.rightAnchor.constraint(equalTo: rightAnchor),
+        ])
+    }
 }
