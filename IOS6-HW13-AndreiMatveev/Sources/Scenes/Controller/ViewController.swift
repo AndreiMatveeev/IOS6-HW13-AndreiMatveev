@@ -8,31 +8,26 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate {
-
-    private let tableView: UITableView = {
-        let table = UITableView(frame: .zero, style: .grouped)
-        table.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.identifier)
-        table.register(SwitchTableViewCell.self, forCellReuseIdentifier: SwitchTableViewCell.identifier)
-        
-        var userInfoHeader: UserInfoHeader
-        let frame = CGRect(x: 0, y: 88, width: 40, height: 100)
-        userInfoHeader = UserInfoHeader(frame: frame)
-        table.tableHeaderView = userInfoHeader
-        table.tableFooterView = UIView()
-        
-        return table
-    }()
+   
+    // MARK: - Properties
+    
+    private var settingsView: SettingView? {
+        guard isViewLoaded else { return nil }
+        return view as? SettingView
+    }
     
     private lazy var models: [Sections] = SettingCellModel().configure()
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
         self.title = "Настройки"
-        view.addSubview(tableView)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.frame = view.bounds
+        view = SettingView()
+        settingsView?.tableView.delegate = self
+        settingsView?.tableView.dataSource = self
+        settingsView?.tableView.frame = view.bounds
     }
 }
     
