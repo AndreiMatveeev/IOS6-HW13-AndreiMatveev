@@ -8,7 +8,10 @@
 import UIKit
 
 class SwitchTableViewCell: UITableViewCell {
-static let identifier = "SwitchTableViewCell"
+    
+    //MARK: - Properties
+    
+    static let identifier = "SwitchTableViewCell"
     
     private let iconContainer: UIView = {
         let view = UIView()
@@ -37,46 +40,47 @@ static let identifier = "SwitchTableViewCell"
         return mySwitch
     }()
     
+    // MARK: - Initialization
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.addSubview(label)
-        contentView.addSubview(iconContainer)
-        contentView.addSubview(mySwitch)
-        iconContainer.addSubview(iconImageView)
         contentView.clipsToBounds = true
         accessoryType = .none
+        
+        addSubviewsForAutoLayout([
+            iconContainer,
+            iconImageView,
+            label,
+            mySwitch
+        ])
+        
+        NSLayoutConstraint.activate([
+            iconContainer.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            iconContainer.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 17),
+            iconContainer.heightAnchor.constraint(equalToConstant: 30),
+            iconContainer.widthAnchor.constraint(equalToConstant: 30),
+            
+            iconImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            iconImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 23),
+            iconImageView.heightAnchor.constraint(equalToConstant: 20),
+            iconImageView.widthAnchor.constraint(equalToConstant: 20),
+            
+            label.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 64),
+            label.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -38),
+            
+            mySwitch.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            mySwitch.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 5),
+            mySwitch.heightAnchor.constraint(equalToConstant: 30),
+            mySwitch.widthAnchor.constraint(equalToConstant: 60),
+        ])
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        let size: CGFloat = contentView.frame.size.height - 12
-        iconContainer.frame = CGRect(x: 15,
-                                     y: 6,
-                                     width: size,
-                                     height: size)
-       
-        let imageSize: CGFloat = size / 1.5
-        
-        iconImageView.frame = CGRect(x: (size - imageSize) / 2,
-                                     y: (size - imageSize) / 2,
-                                     width: imageSize,
-                                     height: imageSize)
-        
-        mySwitch.sizeToFit()
-        mySwitch.frame = CGRect(x: contentView.frame.size.width - mySwitch.frame.size.width - 20,
-                                y: (contentView.frame.size.height - mySwitch.frame.size.height) / 2,
-                                width: mySwitch.frame.size.width,
-                                height: mySwitch.frame.size.height)
-        
-        label.frame = CGRect(x: 25 + iconContainer.frame.size.width,
-                             y: 0,
-                             width: contentView.frame.size.width - 20 - iconContainer.frame.size.width,
-                             height: contentView.frame.size.height)
-    }
+    // MARK: - Сonfiguration
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -93,4 +97,5 @@ static let identifier = "SwitchTableViewCell"
         mySwitch.isOn = model.isOn
     }
 }
+
 

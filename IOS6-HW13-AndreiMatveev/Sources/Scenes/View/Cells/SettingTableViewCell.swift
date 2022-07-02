@@ -8,7 +8,10 @@
 import UIKit
 
 class SettingTableViewCell: UITableViewCell {
-static let identifier = "SettingTableViewCell"
+    
+    //MARK: - Properties
+    
+    static let identifier = "SettingTableViewCell"
     
     private let iconContainer: UIView = {
         let view = UIView()
@@ -31,39 +34,41 @@ static let identifier = "SettingTableViewCell"
         return label
     }()
     
+    // MARK: - Initialization
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.addSubview(label)
-        contentView.addSubview(iconContainer)
-        iconContainer.addSubview(iconImageView)
+        super.init(style: .default, reuseIdentifier: reuseIdentifier)
         contentView.clipsToBounds = true
         accessoryType = .disclosureIndicator
+        
+        addSubviewsForAutoLayout([
+            iconContainer,
+            iconImageView,
+            label
+        ])
+        
+        NSLayoutConstraint.activate([
+            iconContainer.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            iconContainer.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 17),
+            iconContainer.heightAnchor.constraint(equalToConstant: 30),
+            iconContainer.widthAnchor.constraint(equalToConstant: 30),
+            
+            iconImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            iconImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 23),
+            iconImageView.heightAnchor.constraint(equalToConstant: 20),
+            iconImageView.widthAnchor.constraint(equalToConstant: 20),
+            
+            label.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 64),
+            label.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -38),
+        ])
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        let size: CGFloat = contentView.frame.size.height - 12
-        iconContainer.frame = CGRect(x: 15,
-                                     y: 6,
-                                     width: size,
-                                     height: size)
-       
-        let imageSize: CGFloat = size / 1.5
-        
-        iconImageView.frame = CGRect(x: (size - imageSize) / 2,
-                                     y: (size - imageSize) / 2,
-                                     width: imageSize,
-                                     height: imageSize)
-        
-        label.frame = CGRect(x: 25 + iconContainer.frame.size.width,
-                             y: 0,
-                             width: contentView.frame.size.width - 20 - iconContainer.frame.size.width,
-                             height: contentView.frame.size.height)
-    }
+    // MARK: - Сonfiguration
     
     override func prepareForReuse() {
         super.prepareForReuse()

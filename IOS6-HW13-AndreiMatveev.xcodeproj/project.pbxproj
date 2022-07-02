@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B275B71C286F584500F78555 /* settingCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B275B71B286F584500F78555 /* settingCellModel.swift */; };
+		B275B72128700DBC00F78555 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B275B72028700DBC00F78555 /* SettingView.swift */; };
+		B275B7242870392100F78555 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B275B7232870392100F78555 /* Constraints.swift */; };
 		B2B4241E284A1CE5007C13ED /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B4241D284A1CE5007C13ED /* UserInfoTableViewCell.swift */; };
 		B2B42420284A62E3007C13ED /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B4241F284A62E3007C13ED /* SwitchTableViewCell.swift */; };
 		B2DC8BA72847693E003B5686 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DC8BA62847693E003B5686 /* AppDelegate.swift */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B275B71B286F584500F78555 /* settingCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingCellModel.swift; sourceTree = "<group>"; };
+		B275B72028700DBC00F78555 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		B275B7232870392100F78555 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		B2B4241D284A1CE5007C13ED /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
 		B2B4241F284A62E3007C13ED /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		B2DC8BA32847693E003B5686 /* IOS6-HW13-AndreiMatveev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS6-HW13-AndreiMatveev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +49,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B275B716286F472F00F78555 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B275B722287038D700F78555 /* Extensions */,
+				B275B719286F47C400F78555 /* Scenes */,
+				B275B718286F47BB00F78555 /* App */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		B275B717286F474800F78555 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B2DC8BAC2847693E003B5686 /* Main.storyboard */,
+				B2DC8BB128476945003B5686 /* LaunchScreen.storyboard */,
+				B2DC8BAF28476945003B5686 /* Assets.xcassets */,
+				B2DC8BB428476945003B5686 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B275B718286F47BB00F78555 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B2DC8BA62847693E003B5686 /* AppDelegate.swift */,
+				B2DC8BA82847693E003B5686 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B275B719286F47C400F78555 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				B275B71A286F4A7700F78555 /* Model */,
+				B2B4241C284A1C95007C13ED /* View */,
+				B2B4241B284A1C7F007C13ED /* Controller */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		B275B71A286F4A7700F78555 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B275B71B286F584500F78555 /* settingCellModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B275B71D28700D5700F78555 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B2B4241F284A62E3007C13ED /* SwitchTableViewCell.swift */,
+				B2B4241D284A1CE5007C13ED /* UserInfoTableViewCell.swift */,
+				B2DC8BBA28489471003B5686 /* SettingTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B275B722287038D700F78555 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B275B7232870392100F78555 /* Constraints.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B2B4241B284A1C7F007C13ED /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -51,14 +123,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		B2B4241C284A1C95007C13ED /* ViewCell */ = {
+		B2B4241C284A1C95007C13ED /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B2DC8BBA28489471003B5686 /* SettingTableViewCell.swift */,
-				B2B4241D284A1CE5007C13ED /* UserInfoTableViewCell.swift */,
-				B2B4241F284A62E3007C13ED /* SwitchTableViewCell.swift */,
+				B275B72028700DBC00F78555 /* SettingView.swift */,
+				B275B71D28700D5700F78555 /* Cells */,
 			);
-			path = ViewCell;
+			path = View;
 			sourceTree = "<group>";
 		};
 		B2DC8B9A2847693E003B5686 = {
@@ -80,14 +151,8 @@
 		B2DC8BA52847693E003B5686 /* IOS6-HW13-AndreiMatveev */ = {
 			isa = PBXGroup;
 			children = (
-				B2B4241C284A1C95007C13ED /* ViewCell */,
-				B2B4241B284A1C7F007C13ED /* Controller */,
-				B2DC8BA62847693E003B5686 /* AppDelegate.swift */,
-				B2DC8BA82847693E003B5686 /* SceneDelegate.swift */,
-				B2DC8BAC2847693E003B5686 /* Main.storyboard */,
-				B2DC8BAF28476945003B5686 /* Assets.xcassets */,
-				B2DC8BB128476945003B5686 /* LaunchScreen.storyboard */,
-				B2DC8BB428476945003B5686 /* Info.plist */,
+				B275B716286F472F00F78555 /* Sources */,
+				B275B717286F474800F78555 /* Resources */,
 			);
 			path = "IOS6-HW13-AndreiMatveev";
 			sourceTree = "<group>";
@@ -165,8 +230,11 @@
 			files = (
 				B2B4241E284A1CE5007C13ED /* UserInfoTableViewCell.swift in Sources */,
 				B2DC8BAB2847693E003B5686 /* ViewController.swift in Sources */,
+				B275B71C286F584500F78555 /* settingCellModel.swift in Sources */,
 				B2DC8BA72847693E003B5686 /* AppDelegate.swift in Sources */,
+				B275B7242870392100F78555 /* Constraints.swift in Sources */,
 				B2DC8BBB28489471003B5686 /* SettingTableViewCell.swift in Sources */,
+				B275B72128700DBC00F78555 /* SettingView.swift in Sources */,
 				B2DC8BA92847693E003B5686 /* SceneDelegate.swift in Sources */,
 				B2B42420284A62E3007C13ED /* SwitchTableViewCell.swift in Sources */,
 			);
@@ -317,7 +385,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = K2A4TFL764;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "IOS6-HW13-AndreiMatveev/Info.plist";
+				INFOPLIST_FILE = "IOS6-HW13-AndreiMatveev/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -345,7 +413,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = K2A4TFL764;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "IOS6-HW13-AndreiMatveev/Info.plist";
+				INFOPLIST_FILE = "IOS6-HW13-AndreiMatveev/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
